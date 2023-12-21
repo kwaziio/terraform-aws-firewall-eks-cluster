@@ -9,8 +9,24 @@ Terraform Module for Creating a Standardized EKS Cluster Security Group on AWS
 The simplest way to get started is to create a `main.tf` file with the minimum configuration options. You can use the following as a template:
 
 ```HCL
-TODO
+##################################
+# Example Terraform Module Usage #
+##################################
+
+module "terraform_aws_firewall_eks_cluster" {
+  source = "kwaziio/aws/firewall-eks-cluster"
+
+  network_id = "VPC_ID"
+}
 ```
+
+In the example above, you should replace the following templated values:
+
+Placeholder | Description
+--- | ---
+`VPC_ID` | Replace this w/ the ID of the VPC Associated w/ this Security Group
+
+> TIP: Check [our example](examples/complete/main.tf) for a working example of provisioning the AWS VPC mentioned above.
 
 ## Need Help?
 
@@ -24,7 +40,9 @@ The following table lists resources that this module may create in AWS, accompan
 
 Resource Name | Creation Condition
 --- | ---
-TODO | TODO
+VPC Security Group | Always
+VPC Security Group Egress Rules | Always
+VPC Security Group Ingress Rules | Always
 
 ## Usage Examples
 
