@@ -9,7 +9,7 @@ variable "firewall_allowed_ipv4_egress_cidrs" {
 }
 
 variable "firewall_allowed_ipv6_egress_cidrs" {
-  default     = ["::/6"]
+  default     = ["::/0"]
   description = "List of IPv6 CIDRs to Permit All Egress Traffic via All Protocols and Ports"
   type        = list(string)
 }
